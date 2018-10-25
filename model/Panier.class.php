@@ -9,20 +9,26 @@ class Panier
   public $contenu;
   function __construct()
   {
-    $contenu = array();
+    $contenu = array('' => "");
   }
 
-  function addArticle(Article $art)
+  function addArticle(Article $art, int $qte = 0)
   {
-    array_push($contenu, $art);
+    if (array_key_exists($art->ref, $contenu)) {
+      $contenu[$art->ref] += $qte;
+    } else {
+      $contenu[$art->ref] = $qte;
+    }
   }
 
   function getTotal()
   {
-    $ret =0;
-    foreach ($contenu as $value) {
-      $ret += $value->prix;
+    global $dao;
+    $ret = 0;
+    foreach ($contenu as $ref) {
+      $ret += $dao->fetchArticle($ref)->prix;
     }
+
   }
 }
 ?>
