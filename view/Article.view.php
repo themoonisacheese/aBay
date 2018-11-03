@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>aBay le sitemarchand</title>
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li>un truc</li>
-        <li>un autre truc</li>
-        <li>un troisieme</li>
-        <li>se connecter</li>
-      </ul>
-    </nav>
+
 
     <div class="article">
         <div class="photo"><img src="<?= $article->image ?>" alt=""></div>
@@ -22,11 +8,3 @@
           <h2>Prix:</h2><p><?= $article->prix ?></p>
         </div>
     </div>
-
-
-
-
-
-
-  </body>
-</html>
