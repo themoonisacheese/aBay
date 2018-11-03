@@ -12,7 +12,7 @@ class Panier
     $contenu = array('' => "");
   }
 
-  function addArticle(Article $art, int $qte = 0)
+  function addArticle(Article $art, int $qte = 1)
   {
     if (array_key_exists($art->ref, $contenu)) {
       $contenu[$art->ref] += $qte;
