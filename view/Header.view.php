@@ -11,8 +11,9 @@
 
 <div id="wrap">
 
-  <header>
-  </header>
+<header>
+
+</header>
 
   <nav>
     <ul>
@@ -27,3 +28,17 @@
       <li><a href="#">Forum</a></li>
     </ul>
   </nav>
+
+<div class="test">
+
+</div>
+
+
+</div>
+
+<footer>
+  <p>Copyright (c) <  TeamPhPForever 2019 Copyright Holder All Rights Reserved.</p>
+</footer>
+
+  </body>
+</html>
