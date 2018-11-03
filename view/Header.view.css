@@ -1,0 +1,33 @@
+
+header {
+  height: 200px;
+  width:  100%;
+  background-color: black;
+}
+
+nav {
+  background-color: green;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0px
+}
+
+#wrap /* Division contenant l'ensemble du body sauf le footer */
+{
+   min-height: 100%;
+/* égal à la hauteur du footer */
+   margin-bottom: -200px;
+}
+
+#wrap:after
+{display: block;
+ content: "";
+}
+
+footer, #wrap:after{
+  height: 200px;
+}
