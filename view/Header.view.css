@@ -5,16 +5,29 @@ header {
   background-color: black;
 }
 
-nav {
+.NavHeader nav {
   background-color: green;
 }
 
-nav ul {
+.NavHeader nav ul {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   margin: 0px
 }
+
+.NavHeader li {
+  list-style: none;
+}
+
+.NavHeader nav ul li a {
+  font-size: 1em;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
 
 #wrap /* Division contenant l'ensemble du body sauf le footer */
 {
@@ -30,4 +43,12 @@ nav ul {
 
 footer, #wrap:after{
   height: 200px;
+  background-color: blue;
+}
+
+
+
+.test {
+  min-height: 1000px;
+  background-color: yellow;
 }

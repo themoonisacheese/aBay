@@ -12,9 +12,10 @@
 <div id="wrap">
 
 <header>
-<img src="images/banniere.jpg" alt="">
+
 </header>
 
+<div class="NavHeader">
 <nav>
   <ul>
     <li><a href="#"><img src="images/home.png" alt=""></a></li>
@@ -24,3 +25,18 @@
     <li><a href="#">Forum</a></li>
   </ul>
 </nav>
+</div>
+
+<div class="test">
+
+</div>
+
+
+</div>
+
+<footer>
+  <p>Copyright (c) <  TeamPhPForever 2019 Copyright Holder All Rights Reserved.</p>
+</footer>
+
+  </body>
+</html>
