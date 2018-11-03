@@ -1,1 +1,1 @@
-<?php include_once 'article.ctrl.php'; ?>
+<?php include_once 'controler/article.ctrl.php'; ?>

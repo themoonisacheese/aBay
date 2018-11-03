@@ -12,7 +12,7 @@
         // L'objet local PDO de la base de donnée
         private $db;
         // Le type, le chemin et le nom de la base de donnée
-        private $database = 'sqlite:/data/data.db';
+        private $database = 'sqlite:data/data.db';
 
         // Constructeur chargé d'ouvrir la BD
         function __construct() {
@@ -26,7 +26,7 @@
 
         function fetchArticle($ref)
         {
-          return $db->query("select * from article where ref = $ref limit 1")->fetchAll(PDO::FETCH_CLASS)[0];
+          return $this->db->query("select * from article where ref = $ref limit 1")->fetchAll(PDO::FETCH_CLASS)[0];
         }
 
     }
