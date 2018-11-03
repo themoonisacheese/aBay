@@ -7,7 +7,7 @@
     <title></title>
   </head>
   <body>
-<link rel="stylesheet" href="Header.view.css">
+<link rel="stylesheet" href="view/Header.view.css">
 
 <div id="wrap">
 
@@ -15,17 +15,19 @@
 
 </header>
 
-<div class="NavHeader">
-<nav>
-  <ul>
-    <li><a href="#"><img src="images/home.png" alt=""></a></li>
-    <li><a href="#">Categories</a></li>
-    <li><a href="#">Panier</a></li>
-    <li><a href="#">Connexion</a></li>
-    <li><a href="#">Forum</a></li>
-  </ul>
-</nav>
-</div>
+  <nav>
+    <ul>
+      <li><a href="#"><img src="view/images/home.png" alt=""></a></li>
+      <li><a href="#">Categories</a></li>
+      <li><a href="panier.php">Panier <?php
+        if ($panier->nombreDArticles() > 0) {
+          echo "(".$panier-nombreDArticles().")";
+        }
+       ?></a></li>
+      <li><a href="#">Connexion</a></li>
+      <li><a href="#">Forum</a></li>
+    </ul>
+  </nav>
 
 <div class="test">
 
