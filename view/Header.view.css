@@ -55,6 +55,10 @@ footer, #wrap:after{
   background-color: blue;
 }
 
+footer div p {
+  margin-left: 30%;
+  margin-top: 100px;
+}
 
 
 .contenu {
