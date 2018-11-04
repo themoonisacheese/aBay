@@ -18,8 +18,8 @@
 <div class="NavHeader">
   <nav>
     <ul>
-      <li><a href="#">Accueil</a></li>
-      <li><a href="#">Categories</a></li>
+      <li><a href="home.php">Accueil</a></li>
+      <li><a href="categorie.php?ref=1">Categories</a></li>
       <li><a href="panier.php">Panier <?php
         if ($panier->nombreDArticles() > 0) {
           echo "(".$panier->nombreDArticles().")";

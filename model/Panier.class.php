@@ -1,5 +1,6 @@
 <?php
 include_once 'model/Article.class.php';
+include_once 'model/DAO.class.php';
 
 /**
  *
@@ -39,9 +40,9 @@ class Panier
     global $dao;
     $ret = 0;
     foreach ($this->contenu as $ref=>$qte) {
-      $ret += $dao->fetchArticle($ref)->prix;
+      $ret += $dao->fetchArticle($ref)->prix * $qte;
     }
-
+    return $ret;
   }
 }
 ?>

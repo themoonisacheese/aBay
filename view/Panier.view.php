@@ -13,8 +13,11 @@
 
    <div class="articlesPanier">
      <fieldset>
-       <legend><?=$nom?></legend>
-       <input type="button" name="Suppr" value="X" class="croix">
+       <legend><a href="article.php?ref=<?=$ref?>"><?=$nom?></a></legend>
+       <form class="supprimer" action="<?=$_SERVER['REQUEST_URI']?>" method="post">
+         <input type="text" name="id" value="<?= $ref?>" style="display: none;" readonly>
+         <input type="submit" name="Suppr" value="X" class="croix">
+       </form>
        <p>Quantité : <?= $qt ?></p>
        <p>Prix TTC: <?= $prix ?></p>
      </fieldset>
@@ -31,4 +34,4 @@
   </fieldset>
 </div>
 
-<input type="button" name="" value="" id="Commander">
+<input type="button" name="" value="Commander" id="Commander">
