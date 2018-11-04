@@ -15,9 +15,10 @@
 
 </header>
 
+<div class="NavHeader">
   <nav>
     <ul>
-      <li><a href="#"><img src="view/images/home.png" alt=""></a></li>
+      <li><a href="#">Accueil</a></li>
       <li><a href="#">Categories</a></li>
       <li><a href="panier.php">Panier <?php
         if ($panier->nombreDArticles() > 0) {
@@ -28,17 +29,10 @@
       <li><a href="#">Forum</a></li>
     </ul>
   </nav>
+</div>
 
 <div class="test">
 
 </div>
 
-
-</div>
-
-<footer>
-  <p>Copyright (c) <  TeamPhPForever 2019 Copyright Holder All Rights Reserved.</p>
-</footer>
-
-  </body>
-</html>
+<div class="contenu">

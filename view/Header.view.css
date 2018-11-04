@@ -21,10 +21,19 @@ header {
 }
 
 .NavHeader nav ul li a {
-  font-size: 1em;
+  display: block;
+
+  color: white;
   font-weight: bold;
-  padding-left: 10px;
-  padding-right: 10px;
+  font-size: 0.9em;
+  text-decoration: none;
+  padding: 1.5em;
+  border-left: solid white 2px;
+}
+
+.NavHeader nav ul li a:hover{
+  background-color: White;
+  color: black;
 }
 
 
@@ -48,7 +57,7 @@ footer, #wrap:after{
 
 
 
-.test {
+.contenu {
   min-height: 1000px;
   background-color: yellow;
 }
