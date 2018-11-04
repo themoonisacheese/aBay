@@ -4,9 +4,9 @@
 
 <?php foreach ($articles as $ref => $article): ?>
   <?php
-    $qt = $panier->contenu[ref];
+    $qt = $panier->contenu[$ref];
     $nom = $article->libelle;
-    $prix= $articles->prix;
+    $prix= $article->prix;
     $total = $panier->getTotal();
     $nbArticles = $panier->nombreDArticles();
    ?>
