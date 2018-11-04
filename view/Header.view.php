@@ -22,7 +22,7 @@
       <li><a href="#">Categories</a></li>
       <li><a href="panier.php">Panier <?php
         if ($panier->nombreDArticles() > 0) {
-          echo "(".$panier-nombreDArticles().")";
+          echo "(".$panier->nombreDArticles().")";
         }
        ?></a></li>
       <li><a href="#">Connexion</a></li>

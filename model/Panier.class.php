@@ -9,20 +9,20 @@ class Panier
   public $contenu;
   function __construct()
   {
-    $this->contenu = array('' => "");
+    $this->contenu = array();
   }
 
-  function addArticle(Article $art, int $qte = 1)
+  function addArticle($ref, int $qte = 1)
   {
-    if (array_key_exists($art->ref, $this->contenu)) {
-      $this->contenu[$art->ref] += $qte;
+    if (array_key_exists($ref, $this->contenu)) {
+      $this->contenu[$ref] += $qte;
     } else {
-      $this->contenu[$art->ref] = $qte;
+      $this->contenu[$ref] = $qte;
     }
   }
-  function delArticle(Article $art)
+  function delArticle($ref)
   {
-    unset($this->contenu[$art->ref]);
+    unset($this->contenu[$ref]);
   }
 
   function nombreDArticles()
