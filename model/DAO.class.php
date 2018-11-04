@@ -28,6 +28,27 @@
         {
           return $this->db->query("select * from article where ref = $ref limit 1")->fetchAll(PDO::FETCH_CLASS)[0];
         }
+        function fetchCategorie($id){
+          return $this->db->query("select * from categorie where id = $id limit 1")->fetchAll(PDO::FETCH_CLASS)[0];
+        }
+        function fetchEnfants($id){
+          return $this->db->query("select * from categorie where pere = $id and id != $id")->fetchAll(PDO::FETCH_CLASS);
+        }
+        function fetchBest($limit =5 , $id =0){
+          if ($id == 0) {
+            return $this->db->query("select * from article order by rating limit $limit")->fetchAll(PDO::FETCH_CLASS);
+          } else {
+            return $this->db->query("select * from article where categorie = $id limit $limit order by rating")->fetchAll(PDO::FETCH_CLASS);
+          }
+
+        }
+
+        function fetchTree($cat){ // ajoute une propriete enfants a $cat qui contient les categories filles. ces categories sont egalement construites de cette facon, et leur enfants, etc.
+          $cat->enfants = $this->fetchEnfants($cat->id);
+          foreach ($cat->enfants as $enfant) {
+            $this->fetchTree($enfant);
+          }
+        }
 
     }
 
