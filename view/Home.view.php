@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/view/Home.view.css">
+<link rel="stylesheet" href="view/Home.view.css">
 
 <div class="Best">
   <h2 style="margin-left:40%;">Nos meilleurs produits : </h2>
@@ -6,7 +6,7 @@
     <?php foreach ($best as $article):
       $path = "http://www-info.iut2.upmf-grenoble.fr/intranet/enseignements/ProgWeb/data/bricomachin/img/".$article->image ?>
       <a href="article.php?ref=<?=$article->ref?>"><div class="BestArticle" style="border: solid black 1px;">
-        <img src="<?=$path?>" alt="">
+        <img src="<?=$path?>" alt="" style="width:100%;height:auto;">
         <p class="titreArticle" style="margin:2px;">
           <?= $article->libelle ?><br>
           <?= $article->prix?> euros

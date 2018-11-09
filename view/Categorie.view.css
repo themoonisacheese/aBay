@@ -1,0 +1,26 @@
+
+
+
+
+.Article {
+    border: solid black 1px;
+}
+
+.titreArticle {
+  margin:2px;
+  justify-content: center;
+}
+
+.imageArticle {
+  width:100%;
+  height:auto;
+}
+
+
+.ArticleCategoriec .ConteneurCategorie {
+  display: flex;
+}
+
+.ArticleCategorie h2 {
+  margin-left:40%;
+}
