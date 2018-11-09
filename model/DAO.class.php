@@ -36,19 +36,23 @@
         }
         function fetchBest($limit =5 , $id =0){
           if ($id == 0) {
-            return $this->db->query("select * from article order by rating limit $limit")->fetchAll(PDO::FETCH_CLASS);
+            return $this->db->query("select * from article order by rating desc limit $limit")->fetchAll(PDO::FETCH_CLASS);
           } else {
-            return $this->db->query("select * from article where categorie = $id limit $limit order by rating")->fetchAll(PDO::FETCH_CLASS);
+            return $this->db->query("select * from article where categorie = $id limit $limit order by rating desc")->fetchAll(PDO::FETCH_CLASS);
           }
 
         }
 
-        function fetchArticlesFromCat($id){
-          if ($id == 1) {
-            return $this->db->query("select * from article")->fetchAll(PDO::FETCH_CLASS);
-          } else {
-            return $this->db->query("select * from article where categorie = $id")->fetchAll(PDO::FETCH_CLASS);
+        function fetchArticlesFromCat($cat){
+          $ret = array();
+          if (count($cat->enfants) != 0) {
+            foreach ($cat->enfants as $enfant) {
+              $ret =array_merge($ret, $this->fetchArticlesFromCat($enfant));
+            }
+          }else {
+            $ret = $this->db->query("select * from article where categorie = $cat->id")->fetchAll(PDO::FETCH_CLASS);
           }
+          return $ret;
         }
 
         function fetchTree($cat){ // ajoute une propriete enfants a $cat qui contient les categories filles. ces categories sont egalement construites de cette facon, et leur enfants, etc.
@@ -56,6 +60,17 @@
           foreach ($cat->enfants as $enfant) {
             $this->fetchTree($enfant);
           }
+        }
+
+        function acheter($ref, $qte = 1)
+        {
+          $query = "update article set stock =(select stock from article where ref = $ref) - $qte, rating = (select rating from article where ref = $ref) + $qte where ref = $ref";
+          $this->db->prepare($query)->execute();
+        }
+
+        function stocks($qte){
+          $query = "update article set stock = $qte";
+          $this->db->prepare($query)->execute();
         }
 
     }

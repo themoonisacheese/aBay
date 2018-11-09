@@ -1,11 +1,21 @@
-
-
 <link rel="stylesheet" href="view/Categorie.view.css">
-
-<div class="sousCategories"></div>
 
 <div class="ArticleCategorie">
 
+  <div class="sousCategories">
+    <script type="text/javascript">
+        function toggleShow() {
+          var id = arguments[0];
+          var x = document.getElementById(id);
+          if (x.style.display === "none") {
+            x.style.display = "inherit";
+          } else {
+            x.style.display = "none";
+          }
+        }
+    </script>
+    <?php displayCategories($categorie); ?>
+  </div>
 
 
   <h2>Les Articles </h2>
