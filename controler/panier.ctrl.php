@@ -9,6 +9,10 @@ if (!isset($_SESSION)) {
 if (!isset($_SESSION['panier'])) {
   $_SESSION['panier'] = new Panier();
 }
+if (isset($_POST['id'])) {
+  $_SESSION['panier']->delArticle($_POST['id']);
+  header('Location: '.$_SERVER['REQUEST_URI']);
+}
 $panier = $_SESSION['panier'];
 foreach ($panier->contenu as $ref => $value) {
   $articles[$ref] = $dao->fetchArticle($ref);
