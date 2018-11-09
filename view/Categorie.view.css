@@ -3,24 +3,37 @@
 }
 
 
+.ConteneurCategorie {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+  padding-left: 17.5%;
+}
+
 .Article {
     border: solid black 1px;
+    width: 20%;
+}
+
+.titreArticle {
+  width: 100%;
+}
+
+.articleA {
+  width: 20%;
 }
 
 .titreArticle {
   margin:2px;
-  justify-content: center;
+  width: 100%;
 }
 
 .imageArticle {
   width:100%;
-  height:auto;
+  height: 200px;
 }
 
-
-.ArticleCategoriec .ConteneurCategorie {
-  display: flex;
-}
 
 .ArticleCategorie h2 {
   margin-left:40%;
