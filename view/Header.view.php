@@ -25,8 +25,6 @@
           echo "(".$panier->nombreDArticles().")";
         }
        ?></a></li>
-      <li><a href="#">Connexion</a></li>
-      <li><a href="#">Forum</a></li>
     </ul>
   </nav>
 </div>
