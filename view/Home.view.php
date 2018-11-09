@@ -6,7 +6,7 @@
     <?php foreach ($best as $article):
       $path = "http://www-info.iut2.upmf-grenoble.fr/intranet/enseignements/ProgWeb/data/bricomachin/img/".$article->image ?>
       <a href="article.php?ref=<?=$article->ref?>"><div class="BestArticle" style="border: solid black 1px;">
-        <img src="<?=$path?>" alt="" style="width:100%;height:auto;">
+        <img src="<?=$path?>" alt="" style="width:100%;height:300px;">
         <p class="titreArticle" style="margin:2px;">
           <?= $article->libelle ?><br>
           <?= $article->prix?> euros

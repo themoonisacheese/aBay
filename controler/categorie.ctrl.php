@@ -1,6 +1,6 @@
 <?php include_once 'model/Article.clss.php';
 include_once 'model/Categorie.class.php';
-include_once 'DAO.class.php';
+include_once 'model/DAO.class.php';
 if (isset($_GET['id'])) {
   $catid = $_GET['id'];
 }else{

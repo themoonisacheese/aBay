@@ -1,6 +1,7 @@
 
 
-    <div class="article">
+<link rel="stylesheet" href="view/Article.view.css">
+    <div class="vueArticle">
         <div class="photo"><img src="http://www-info.iut2.upmf-grenoble.fr/intranet/enseignements/ProgWeb/data/bricomachin/img/<?= $article->image ?>" alt=""></div>
         <div class="infos">
           <h2>Nom:</h2><p><?= $article->libelle ?></p>
