@@ -62,6 +62,12 @@
           }
         }
 
+        function acheter($ref, $qte = 1)
+        {
+          $query = "update article set stock =(select stock from article where ref = $ref) - $qte, rating = (select rating from article where ref = $ref) + $qte where ref = $ref";
+          $this->db->prepare($query)->execute(); 
+        }
+
     }
 
     ?>

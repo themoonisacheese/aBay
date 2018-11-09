@@ -34,7 +34,7 @@ if ($nbArticles > 0): ?>
     </p>
   </fieldset>
 </div>
-<input type="button" name="" value="Commander" id="Commander">
+<a href="commande.php"><input type="button" name="" value="Commander" id="Commander"></a>
 <?php else:?>
   <h2>Vous n'avez pas d'article dans votre panier</h2>
 <?php endif; ?>
