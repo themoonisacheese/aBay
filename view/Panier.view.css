@@ -1,0 +1,18 @@
+fieldset {
+  width: 30%;
+  padding: 10px;
+}
+
+fieldset * {
+  padding: 0px;
+  margin: 5px;
+}
+
+.croix {
+  margin-left: 90%;
+  margin-top: 0px;
+}
+
+#Commander {
+  margin-left: 50%;
+}
