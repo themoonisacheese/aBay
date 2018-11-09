@@ -1,0 +1,16 @@
+.vueArticle {
+  width: 70%;
+  margin-left: 15%;
+  border: solid 1px black;
+}
+
+.vueArticle div img {
+width: 50%;
+min-height: 200px;
+max-height: 400px;
+padding-left: 25%;
+}
+
+.vueArticle div h2 {
+  margin: 0px;
+}
