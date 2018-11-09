@@ -13,6 +13,7 @@ if (isset($_POST['id']) && isset($_POST['qte'])) {
   $_SESSION['panier']->addArticle($_POST['id'], $_POST['qte']);
   header('Location: '.$_SERVER['REQUEST_URI']);
 }
+$categorie = $dao->fetchCategorie($article->categorie)->nom;
 include 'controler/Header.ctrl.php';
 include 'view/Article.view.php';
 include 'controler/Footer.ctrl.php';?>

@@ -1,14 +1,15 @@
 
 
 <link rel="stylesheet" href="view/Panier.view.css">
-
+<?php $total = $panier->getTotal();
+$nbArticles = $panier->nombreDArticles();
+if ($nbArticles > 0): ?>
 <?php foreach ($articles as $ref => $article): ?>
   <?php
     $qt = $panier->contenu[$ref];
     $nom = $article->libelle;
     $prix= $article->prix;
-    $total = $panier->getTotal();
-    $nbArticles = $panier->nombreDArticles();
+
    ?>
 
    <div class="articlesPanier">
@@ -22,6 +23,7 @@
        <p>Prix TTC: <?= $prix ?></p>
      </fieldset>
    </div>
+   <input type="button" name="" value="Commander" id="Commander">
 
 <?php endforeach; ?>
 
@@ -33,5 +35,6 @@
     </p>
   </fieldset>
 </div>
-
-<input type="button" name="" value="Commander" id="Commander">
+<?php else:?>
+  <h2>Vous n'avez pas d'article dans votre panier</h2>
+<?php endif; ?>
