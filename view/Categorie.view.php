@@ -1,12 +1,22 @@
-<?php include_once("view/Categorie.view.css") ?>
-
+<link rel="stylesheet" href="view/Categorie.view.css">
 
 <div class="ArticleCategorie">
 
   <div class="sousCategories">
-
+    <script type="text/javascript">
+        function toggleShow() {
+          var id = arguments[0];
+          var x = document.getElementById(id);
+          if (x.style.display === "none") {
+            x.style.display = "inherit";
+          } else {
+            x.style.display = "none";
+          }
+        }
+    </script>
+    <?php displayCategories($categorie); ?>
   </div>
-  
+
   <h2>Nos meilleurs produits : </h2>
   <div class="ConteneurCategorie">
     <?php foreach ($articles as $article):

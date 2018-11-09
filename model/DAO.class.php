@@ -43,12 +43,16 @@
 
         }
 
-        function fetchArticlesFromCat($id){
-          if ($id == 1) {
-            return $this->db->query("select * from article")->fetchAll(PDO::FETCH_CLASS);
-          } else {
-            return $this->db->query("select * from article where categorie = $id")->fetchAll(PDO::FETCH_CLASS);
+        function fetchArticlesFromCat($cat){
+          $ret = array();
+          if (count($cat->enfants) != 0) {
+            foreach ($cat->enfants as $enfant) {
+              $ret =array_merge($ret, $this->fetchArticlesFromCat($enfant));
+            }
+          }else {
+            $ret = $this->db->query("select * from article where categorie = $cat->id")->fetchAll(PDO::FETCH_CLASS);
           }
+          return $ret;
         }
 
         function fetchTree($cat){ // ajoute une propriete enfants a $cat qui contient les categories filles. ces categories sont egalement construites de cette facon, et leur enfants, etc.
