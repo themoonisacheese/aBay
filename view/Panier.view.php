@@ -2,23 +2,24 @@
 
 <link rel="stylesheet" href="view/Panier.view.css">
 
-<?php foreach ($articles as $ref => $article): ?>
-  <?php
-    $qt = $panier->contenu[$ref];
-    $nom = $article->libelle;
-    $prix= $article->prix;
-    $total = $panier->getTotal();
-    $nbArticles = $panier->nombreDArticles();
-   ?>
+<?php
+$total = $panier->getTotal();
 
-   <div class="articlesPanier">
-     <fieldset>
-       <legend><?=$nom?></legend>
-       <input type="button" name="Suppr" value="X" class="croix">
-       <p>Quantité : <?= $qt ?></p>
-       <p>Prix TTC: <?= $prix ?></p>
-     </fieldset>
-   </div>
+foreach ($articles as $ref => $article):
+  $qt = $panier->contenu[$ref];
+  $nom = $article->libelle;
+  $prix= $article->prix;
+  $nbArticles = $panier->nombreDArticles();
+  ?>
+
+<div class="articlesPanier">
+  <fieldset>
+    <legend><?=$nom?></legend>
+    <input type="button" name="Suppr" value="X" class="croix">
+    <p>Quantité : <?= $qt ?></p>
+    <p>Prix TTC: <?= $prix ?></p>
+  </fieldset>
+</div>
 
 <?php endforeach; ?>
 
@@ -31,4 +32,4 @@
   </fieldset>
 </div>
 
-<input type="button" name="" value="" id="Commander">
+<input type="button" name="" value="Commander" id="Commander">
