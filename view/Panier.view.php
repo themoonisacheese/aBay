@@ -25,6 +25,15 @@ if ($nbArticles > 0): ?>
    </div>
    <input type="button" name="" value="Commander" id="Commander">
 
+<div class="articlesPanier">
+  <fieldset>
+    <legend><?=$nom?></legend>
+    <input type="button" name="Suppr" value="X" class="croix">
+    <p>Quantité : <?= $qt ?></p>
+    <p>Prix TTC: <?= $prix ?></p>
+  </fieldset>
+</div>
+
 <?php endforeach; ?>
 
 <div class="articlesPanier">

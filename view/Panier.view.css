@@ -1,5 +1,5 @@
 fieldset {
-  width: 300px;
+  width: 30%;
   padding: 10px;
 }
 
@@ -9,7 +9,7 @@ fieldset * {
 }
 
 .croix {
-  margin-left: 250px;
+  margin-left: 90%;
   margin-top: 0px;
 }
 
