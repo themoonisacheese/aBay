@@ -43,6 +43,14 @@
 
         }
 
+        function fetchArticlesFromCat($id){
+          if ($id == 1) {
+            return $this->db->query("select * from article")->fetchAll(PDO::FETCH_CLASS);
+          } else {
+            return $this->db->query("select * from article where categorie = $id")->fetchAll(PDO::FETCH_CLASS);
+          }
+        }
+
         function fetchTree($cat){ // ajoute une propriete enfants a $cat qui contient les categories filles. ces categories sont egalement construites de cette facon, et leur enfants, etc.
           $cat->enfants = $this->fetchEnfants($cat->id);
           foreach ($cat->enfants as $enfant) {
